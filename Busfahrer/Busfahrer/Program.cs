@@ -23,8 +23,9 @@ for(int i = 0; i < cardIdentifier.Length; i++)
 currentCards.AddRange(cards);
 
 Run runSmart = new Run();
+Run runAverage = new Run();
 
-for(int i = 0; i < 1000; i++)
+for(int i = 0; i < 10000; i++)
 {
     runStupid.PlayStupid(currentCards, random, cards);
     
@@ -42,7 +43,7 @@ Console.WriteLine(runStupid.FourthRoundLosses.ToString());
 Console.WriteLine("Total amount of wins with random decisions: " + runStupid.FourthRoundWon.ToString());
 
 currentCards.AddRange(cards);
-for (int i = 0; i < 1000; i++)
+for (int i = 0; i < 10000; i++)
 {
     runSmart.PlaySmart(currentCards, random, cards);
 }
@@ -58,7 +59,22 @@ Console.WriteLine("Smart Losses  " + runSmart.FourthRoundLosses.ToString());
 */
 Console.WriteLine("Total amount of wins with card counting: " + runSmart.FourthRoundWon.ToString());
 
-
+currentCards.AddRange(cards);
+for (int i = 0; i < 10000; i++)
+{
+    runAverage.PlayAverage(currentCards, random, cards);
+}
+/*
+Console.WriteLine(runAverage.FirstRoundWon.ToString());
+Console.WriteLine(runAverage.FirstRoundLosses.ToString());
+Console.WriteLine(runAverage.SecondRoundWon.ToString());
+Console.WriteLine(runAverage.SecondRoundLosses.ToString());
+Console.WriteLine(runAverage.ThirdRoundWon.ToString());
+Console.WriteLine(runAverage.ThirdRoundLosses.ToString());
+Console.WriteLine(runAverage.FourthRoundWon.ToString());
+Console.WriteLine(runAverage.FourthRoundLosses.ToString());
+*/
+Console.WriteLine("Total amount of wins when only making decisions based on the current card: " + runAverage.FourthRoundWon.ToString());
 
 
 public class Run {
@@ -79,6 +95,86 @@ public class Run {
     public int FourthRoundWon = 0;
     public int FourthRoundLosses = 0;
 
+    public List<string> PlayAverage(List<string> currentCards, Random random, List<string> cards)
+    {
+        if (currentCards.Count == 0) currentCards.AddRange(cards);
+        int result = random.Next(4);
+        Won = FirstGame(currentCards, random, result);
+        currentCards.RemoveAt(currentIndex);
+        if(Won)
+        {
+            FirstRoundWon++;
+        } else
+        {
+            FirstRoundLosses++;
+            return currentCards;
+        }
+
+        if (currentCards.Count == 0) currentCards.AddRange(cards);
+        if (GetCardValue(firstCard[0]) >= 8)
+        {
+            result = 0;
+        } else
+        {
+            result = 1;
+        }
+        Won = SecondGame(currentCards, random, result);
+        currentCards.RemoveAt(currentIndex);
+        if(Won)
+        {
+            SecondRoundWon++;
+        } else
+        {
+            SecondRoundLosses++;
+            return currentCards;
+        }
+
+
+        if (currentCards.Count == 0) currentCards.AddRange(cards);
+        int firstCardValue = GetCardValue(firstCard[0]);
+        int secondCardValue = GetCardValue(secondCard[0]);
+        int difference = 0;
+        if(firstCardValue >= secondCardValue)
+        {
+            difference = firstCardValue - secondCardValue;
+        } else
+        {
+            difference = secondCardValue - firstCardValue;
+        }
+
+        if(difference >= 6)
+        {
+            result = 0;
+        } else
+        {
+            result = 1;
+        }
+        Won = ThirdGame(currentCards, random, result);
+        currentCards.RemoveAt(currentIndex);
+        if(Won)
+        {
+            ThirdRoundWon++;
+        } else
+        {
+            ThirdRoundLosses++;
+            return currentCards;
+        }
+
+        if (currentCards.Count == 0) currentCards.AddRange(cards);
+        result = random.Next(4);
+        Won = FourthGame(currentCards, random, result);
+        currentCards.RemoveAt(currentIndex);
+        if(Won)
+        {
+            FourthRoundWon++;
+        } else
+        {
+            FourthRoundLosses++;
+            return currentCards;
+        }
+
+        return currentCards;
+    }
     public List<string> PlaySmart(List<string> currentCards, Random random, List<string> cards)
     {
         if (currentCards.Count == 0) currentCards.AddRange(cards);
