@@ -1,5 +1,5 @@
 # Busfahrer
- Calculating the odds in a drinking game...
+ Simulating the odds of a drinking game...
  
 1. The Player has to say if the next card is red or black
 2. The Player has to say if the next card is higher or lower then the card he got in round 1
