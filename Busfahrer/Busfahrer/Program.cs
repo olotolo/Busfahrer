@@ -25,7 +25,9 @@ currentCards.AddRange(cards);
 Run runSmart = new Run();
 Run runAverage = new Run();
 
-for(int i = 0; i < 10000; i++)
+int runs = 100000;
+
+for(int i = 0; i < runs; i++)
 {
     runStupid.PlayStupid(currentCards, random, cards);
     
@@ -43,7 +45,7 @@ Console.WriteLine(runStupid.FourthRoundLosses.ToString());
 Console.WriteLine("Total amount of wins with random decisions: " + runStupid.FourthRoundWon.ToString());
 
 currentCards.AddRange(cards);
-for (int i = 0; i < 10000; i++)
+for (int i = 0; i < runs; i++)
 {
     runSmart.PlaySmart(currentCards, random, cards);
 }
@@ -60,7 +62,7 @@ Console.WriteLine("Smart Losses  " + runSmart.FourthRoundLosses.ToString());
 Console.WriteLine("Total amount of wins with card counting: " + runSmart.FourthRoundWon.ToString());
 
 currentCards.AddRange(cards);
-for (int i = 0; i < 10000; i++)
+for (int i = 0; i < runs; i++)
 {
     runAverage.PlayAverage(currentCards, random, cards);
 }
@@ -75,7 +77,7 @@ Console.WriteLine(runAverage.FourthRoundWon.ToString());
 Console.WriteLine(runAverage.FourthRoundLosses.ToString());
 */
 Console.WriteLine("Total amount of wins when only making decisions based on the current card: " + runAverage.FourthRoundWon.ToString());
-
+Console.WriteLine("In a total amount of " + runs + " runs");
 
 public class Run {
     public bool Won = false;
