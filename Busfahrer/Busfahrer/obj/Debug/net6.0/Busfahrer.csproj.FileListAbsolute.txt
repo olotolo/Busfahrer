@@ -1,0 +1,15 @@
+C:\Users\olesc\Desktop\Busfahrer\Busfahrer\Busfahrer\Busfahrer\bin\Debug\net6.0\Busfahrer.exe
+C:\Users\olesc\Desktop\Busfahrer\Busfahrer\Busfahrer\Busfahrer\bin\Debug\net6.0\Busfahrer.deps.json
+C:\Users\olesc\Desktop\Busfahrer\Busfahrer\Busfahrer\Busfahrer\bin\Debug\net6.0\Busfahrer.runtimeconfig.json
+C:\Users\olesc\Desktop\Busfahrer\Busfahrer\Busfahrer\Busfahrer\bin\Debug\net6.0\Busfahrer.dll
+C:\Users\olesc\Desktop\Busfahrer\Busfahrer\Busfahrer\Busfahrer\bin\Debug\net6.0\Busfahrer.pdb
+C:\Users\olesc\Desktop\Busfahrer\Busfahrer\Busfahrer\Busfahrer\obj\Debug\net6.0\Busfahrer.csproj.AssemblyReference.cache
+C:\Users\olesc\Desktop\Busfahrer\Busfahrer\Busfahrer\Busfahrer\obj\Debug\net6.0\Busfahrer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\olesc\Desktop\Busfahrer\Busfahrer\Busfahrer\Busfahrer\obj\Debug\net6.0\Busfahrer.AssemblyInfoInputs.cache
+C:\Users\olesc\Desktop\Busfahrer\Busfahrer\Busfahrer\Busfahrer\obj\Debug\net6.0\Busfahrer.AssemblyInfo.cs
+C:\Users\olesc\Desktop\Busfahrer\Busfahrer\Busfahrer\Busfahrer\obj\Debug\net6.0\Busfahrer.csproj.CoreCompileInputs.cache
+C:\Users\olesc\Desktop\Busfahrer\Busfahrer\Busfahrer\Busfahrer\obj\Debug\net6.0\Busfahrer.dll
+C:\Users\olesc\Desktop\Busfahrer\Busfahrer\Busfahrer\Busfahrer\obj\Debug\net6.0\refint\Busfahrer.dll
+C:\Users\olesc\Desktop\Busfahrer\Busfahrer\Busfahrer\Busfahrer\obj\Debug\net6.0\Busfahrer.pdb
+C:\Users\olesc\Desktop\Busfahrer\Busfahrer\Busfahrer\Busfahrer\obj\Debug\net6.0\Busfahrer.genruntimeconfig.cache
+C:\Users\olesc\Desktop\Busfahrer\Busfahrer\Busfahrer\Busfahrer\obj\Debug\net6.0\ref\Busfahrer.dll
